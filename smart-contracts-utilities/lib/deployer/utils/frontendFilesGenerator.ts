@@ -25,9 +25,6 @@ export class FrontendFilesGenerator {
     try {
       if (!fs.existsSync(this.frontendContractsDirTarget)) {
         fs.mkdirSync(this.frontendContractsDirTarget);
-      } else {
-        fs.rmSync(this.frontendContractsDirTarget, { recursive: true });
-        fs.mkdirSync(this.frontendContractsDirTarget);
       }
 
       const contractsArtifact = artifacts.readArtifactSync(contractName);
@@ -44,7 +41,7 @@ export class FrontendFilesGenerator {
 
       console.log({
         message: "CONTRACT_FILES_GENERATED_SUCCESSFULLY",
-        path: this.frontendContractsDirTarget + `${contractName}.json`,
+        path: join(this.frontendContractsDirTarget, `${contractName}.json`),
       });
     } catch (error) {
       console.error({

@@ -5,7 +5,7 @@ import { ethers } from "hardhat";
 import { IOProvider } from "./utils/ioProvider";
 import {
   FrontendFilesGenerator,
-  ReactComponentsGenerator,
+  ContractClassGenerator,
   Logger,
 } from "./utils/";
 
@@ -14,7 +14,7 @@ export class Deployer {
   private readonly logger: Logger = new Logger();
   constructor(
     private readonly frontendFilesGenerator?: FrontendFilesGenerator,
-    private readonly reactComponentsGenerator?: ReactComponentsGenerator
+    private readonly reactComponentsGenerator?: ContractClassGenerator
   ) {}
 
   private async getNetworkName(): Promise<string> {
