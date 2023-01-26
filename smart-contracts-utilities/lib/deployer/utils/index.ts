@@ -1,3 +1,3 @@
 export { FrontendFilesGenerator } from "./frontendFilesGenerator";
-export { ReactComponentsGenerator } from "./reactComponentsGenerator";
+export { ContractClassGenerator } from "./ContractClassGenerator";
 export { Logger } from "./logger";

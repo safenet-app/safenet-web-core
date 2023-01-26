@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 
-contract SecretsCementery {
+contract Test {
     struct Secret {
         uint256 id;
         address owner;
@@ -56,6 +56,4 @@ contract SecretsCementery {
     function getSecretByOwner() public view returns (uint256[] memory) {
         return secretsByOwner[msg.sender];
     }
-
-    function a() private pure {}
 }

@@ -1,6 +1,6 @@
 {
   "name": "hardhat-modifiying",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "",
   "main": "scripts/deploy.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "deploy:goerli": "npx hardhat run scripts/deploy.ts --network goerli",
     "test": "npx hardhat test"
   },
-  "keywords": [],
+  "keywords": ["ethereum", "smart contract", "ethers", "hardhat"],
   "author": "https://github.com/cocodrilette",
   "license": "MIT",
   "devDependencies": {
