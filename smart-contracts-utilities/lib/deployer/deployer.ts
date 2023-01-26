@@ -13,16 +13,14 @@ export class Deployer {
   private readonly ioProvider: IOProvider = new IOProvider();
   private readonly logger: Logger = new Logger();
   constructor(
-    private readonly frontendFilesGenerator: FrontendFilesGenerator = new FrontendFilesGenerator(),
-    private readonly reactComponentsGenerator: ReactComponentsGenerator = new ReactComponentsGenerator()
+    private readonly frontendFilesGenerator?: FrontendFilesGenerator,
+    private readonly reactComponentsGenerator?: ReactComponentsGenerator
   ) {}
 
   private async getNetworkName(): Promise<string> {
     const network = await ethers.provider.getNetwork();
     return network.name;
   }
-
-
 
   private getContractsNames(): string[] | Error {
     const contractsNames = fs
