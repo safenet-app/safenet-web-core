@@ -1,10 +1,17 @@
 import { Deployer } from "../lib/deployer/deployer";
-import { ReactComponentsGenerator } from "../lib/deployer/utils/reactComponentsGenerator";
+import {
+  ReactComponentsGenerator,
+  FrontendFilesGenerator,
+} from "../lib/deployer/utils";
 
+const frontendFilesGenerator = new FrontendFilesGenerator();
 const reactComponentsGenerator = new ReactComponentsGenerator();
 
 async function main() {
-  const deployer = new Deployer(undefined, reactComponentsGenerator);
+  const deployer = new Deployer(
+    frontendFilesGenerator,
+    reactComponentsGenerator
+  );
   deployer.deploy();
 }
 
