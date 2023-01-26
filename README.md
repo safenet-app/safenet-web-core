@@ -4,4 +4,4 @@ This is the core of the Safenet: Decentralized disaster recovery platform web a
 
 ## Docs
 
-- You can see the docs for Smart Contract Development Utilities in [`smart-contracts-utilities/README.md`](https://github.com/safenet-app/safenet-core/blob/main/smart-contracts-utilities/README.md)
+- You can see the docs for Smart Contract Development Utilities in [`smart-contracts-utilities/README.md`](https://github.com/safenet-app/safenet-web-core/tree/main/smart-contracts-utilities)
