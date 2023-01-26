@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { ThemeChanger } from "./components/ThemeChange";
+import  App  from "./components/_events";
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <ThemeChanger />
+        <App/>
       </main>
     </>
   );
