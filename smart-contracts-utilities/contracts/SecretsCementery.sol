@@ -20,6 +20,12 @@ contract SecretsCementery {
         Secret diedSecret
     );
 
+    uint8 secretNum;
+
+    constructor(uint8 _a, uint8 b) {
+        secretNum = _a + b;
+    }
+
     function buryNewSecret(string memory _secret) public {
         uint256 secretId = totalSecretsBuriedOut;
         totalSecretsBuriedOut += 1;
@@ -54,4 +60,6 @@ contract SecretsCementery {
     function getSecretByOwner() public view returns (uint256[] memory) {
         return secretsByOwner[msg.sender];
     }
+
+    function a() private pure {}
 }

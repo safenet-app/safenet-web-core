@@ -1,13 +1,10 @@
 import { Deployer } from "../lib/deployer/deployer";
-import { DeployerOptions } from "../types";
+import { ReactComponentsGenerator } from "../lib/deployer/utils/reactComponentsGenerator";
 
-const deployerOptions: DeployerOptions = {
-  generateFrontendFiles: true, // * Uncomment this line to generate useful frontend file
-  // generateReactComponents: true, // ! NOT_SUPPORTED_YET // * Uncomment this line to generate React Components from contracts ABI
-};
+const reactComponentsGenerator = new ReactComponentsGenerator();
 
 async function main() {
-  const deployer = new Deployer(deployerOptions);
+  const deployer = new Deployer(undefined, reactComponentsGenerator);
   deployer.deploy();
 }
 

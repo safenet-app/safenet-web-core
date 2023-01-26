@@ -1,1 +1,3 @@
-export { DeployerOptions } from "./Deployer.interfaces";
+export { DeployerOptions } from "./Deployer";
+export { ContractFunction } from "./ContractFunction";
+export { Options } from "./ReactComponentsGeneratorOptions";
