@@ -1,0 +1,11 @@
+.label {
+  @apply w-72;
+}
+
+.input {
+  @apply px-2 py-2 rounded-md border;
+}
+
+.inputGroup {
+  @apply flex flex-col;
+}
