@@ -34,12 +34,12 @@ npm run deploy:<network> # to deploy all contracts in ./contracts/* dir
 
 With this option active when you deploy your contracts a `contracts` directory will be created in the `web-app` directory with one JSON file for each contract with the format `<ContractName>.json`. Each JSON file will contain the contract `address` and the contract `abi`.
 
-- `FrontendFilesGenerator`: Canrecive one optional parameter:
-  - `frontendContractsDirTarget`: `string`. Default: `<Project Root>/web-app/contracts`. The path specifying where to save the generatedFiles. an Error `THE_SPECIFIED_PATH_CANNOT_BE_FOUND` will be throw if the path does not exist.
-  
-- `ReactComponentsGenerator`: Can receive two optionals constructor parameters:
-  - `generateUI`: `boolean`. Default: `true`. This option allow you to choose if the `ReactComponentsGenerator` will generate a fully functional React Component (with default styles) or (when `false`) just generate functions to interact with the deployed contract.
-  - `componentsContractsDirTarget`: `string`. Default: `<Project Root>/web-app/components/contracts`. The path specifying where to save the generatedFiles. an Error `THE_SPECIFIED_PATH_CANNOT_BE_FOUND` will be throw if the path does not exist.
+- `Deployer`: Can receive two optionals parameters:
+  - `FrontendFilesGenerator`: Can reicive one optional parameter:
+    - `frontendContractsDirTarget`: `string`. Default: `<Project Root>/web-app/contracts`. The path specifying where to save the generatedFiles. an Error `THE_SPECIFIED_PATH_CANNOT_BE_FOUND` will be throw if the path does not exist.
+  - `ReactComponentsGenerator`: Can receive two optionals constructor parameters:
+    - `generateUI`: `boolean`. Default: `true`. This option allow you to choose if the `ReactComponentsGenerator` will generate a fully functional React Component (with default styles) or (when `false`) just generate functions to interact with the deployed contract.
+    - `componentsContractsDirTarget`: `string`. Default: `<Project Root>/web-app/components/contracts`. The path specifying where to save the generatedFiles. an Error `THE_SPECIFIED_PATH_CANNOT_BE_FOUND` will be throw if the path does not exist.
 
 ```typescript
 import { Deployer } from "../lib/deployer/deployer";
