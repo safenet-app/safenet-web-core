@@ -50,12 +50,9 @@ import {
 
 const frontendFilesGenerator = new FrontendFilesGenerator();
 const reactComponentsGenerator = new ReactComponentsGenerator();
+const deployer = new Deployer(frontendFilesGenerator, reactComponentsGenerator);
 
 async function main() {
-  const deployer = new Deployer(
-    frontendFilesGenerator,
-    reactComponentsGenerator
-  );
   deployer.deploy();
 }
 
