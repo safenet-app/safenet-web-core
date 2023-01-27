@@ -1,8 +1,11 @@
 import Head from "next/head";
 import { ThemeChanger } from "./components/ThemeChange";
-import  App  from "./components/_events";
+import  Event  from "./components/_events";
+import  Donation  from "./components/_donations";
 
 export default function Home() {
+  let event = new Event();
+  let donation = new Donation();
   return (
     <>
       <Head>
@@ -12,7 +15,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <App/>
+      <div className="Event">
+        <button onClick={event.createEvent}>- Create Event</button>
+        <button onClick={event.deleteEvent}>- Delete Event</button>
+        <button onClick={event.updateEvent}>- Update Event</button>
+        <button onClick={donation.createDonation}>- Create Donation</button>
+        <button onClick={donation.deleteDonation}>- Delete Donation</button>
+        <button onClick={donation.updateDonation}>- Update Donation</button>
+      </div>        
       </main>
     </>
   );

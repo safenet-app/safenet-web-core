@@ -1,38 +1,40 @@
-import React from "react";
 import { Polybase } from "@polybase/client";
 
 const db = new Polybase({ defaultNamespace: "SafeNet"});
-const events = db.collection("Events");
-console.log(events)
+const eventsCollection = db.collection("Events");
+console.log(eventsCollection)
 
 
-function App() {
+export default class Event {
   
-    const record = async() =>{
-      // events.call("setInfo", ['Miguel', 'Bogota',['cemento','2']]);
-      const result = await events.create(['1', '25012023', '1200', '24012023', 'Homero Simpson', 'derrumbe en area montañosa, 3 casas destruidas', 'La mesa-Cundinamarca', ['placeholder'], ['0x12345'] ]);
-      console.log(result);
+    async createEvent(id: string, date:string, time:string,estimatedDate: string,reportingUser: string, shortDescription: string,location: string){
+      try {
+        const result = await eventsCollection.create([id, date, time, estimatedDate, reportingUser, shortDescription, location]);
+        console.log(result);
+      }
+      catch (error){
+        console.error(error);
+      }
     }
     
-    const destroy = async() =>{
-      // events.call("setInfo", ['Miguel', 'Bogota',['cemento','2']]);
-      const result = await events.record('1').call('del',[]);
-      console.log(result);
+    async deleteEvent(){
+      try {
+        const result = await eventsCollection.record('1').call('del',[]);
+        console.log(result);
+      }
+      catch (error){
+        console.error(error);
+      }
     }
 
-    const update = async() =>{
-      const result = await events.record("1").call("setEvent", ['25012023', '1200', '24012023', 'Marge Simpson', 'derrumbe', 'La mesa-Cundinamarca', ['placeholder'], ['0x12345'], "approved", 'derrumbe en area montañosa, 3 casas destruidas', "all info ok" ]);      
-      console.log(result);
+    async updateEvent(){
+      try {
+        const result = await eventsCollection.record("1").call("setEvent", ['25012023', '1200', '24012023', 'Marge Simpson', 'derrumbe', 'La mesa-Cundinamarca', ['placeholder'], ['0x12345'], "approved", 'derrumbe en area montañosa, 3 casas destruidas', "all info ok" ]);      
+        console.log(result);
+      }
+      catch (error){
+        console.error(error);
+      }
     }
-      
-  return (
-    <div className="App">
-      <button onClick={record}>Record</button>
-      <button onClick={destroy}>Destroy</button>
-      <button onClick={update}>Update</button>
-    </div>
-  );
-  
-}
+  }
 
-export default App;
