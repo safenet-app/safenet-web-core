@@ -2,8 +2,7 @@ import fs from "node:fs";
 import { join } from "node:path";
 
 import { ethers } from "hardhat";
-import { Contract } from "ethers";
-import { DeployerOptions } from "../../types";
+import { IOProvider } from "./utils/ioProvider";
 import {
   FrontendFilesGenerator,
   ReactComponentsGenerator,
@@ -11,28 +10,19 @@ import {
 } from "./utils/";
 
 export class Deployer {
-  private readonly frontendFilesGenerator?: FrontendFilesGenerator;
-  private readonly reactComponentsGenerator?: ReactComponentsGenerator;
-
+  private readonly ioProvider: IOProvider = new IOProvider();
+  private readonly logger: Logger = new Logger();
   constructor(
-    options?: DeployerOptions,
-    private readonly logger: Logger = new Logger()
-  ) {
-    if (options) {
-      if (options.generateFrontendFiles) {
-        this.frontendFilesGenerator = new FrontendFilesGenerator();
-      }
-
-      if (options.generateReactComponents) {
-        this.reactComponentsGenerator = new ReactComponentsGenerator();
-      }
-    }
-  }
+    private readonly frontendFilesGenerator: FrontendFilesGenerator = new FrontendFilesGenerator(),
+    private readonly reactComponentsGenerator: ReactComponentsGenerator = new ReactComponentsGenerator()
+  ) {}
 
   private async getNetworkName(): Promise<string> {
     const network = await ethers.provider.getNetwork();
     return network.name;
   }
+
+
 
   private getContractsNames(): string[] | Error {
     const contractsNames = fs
@@ -51,7 +41,18 @@ export class Deployer {
 
       const contracts = contractsNames.map(async (contractName: string) => {
         const factory = await ethers.getContractFactory(contractName);
-        const deployer = await factory.deploy();
+        let deployer;
+
+        if (factory.interface.fragments[0].type === "constructor") {
+          const constructorParams =
+            await this.ioProvider.getConstructorParameters(
+              contractName,
+              factory.interface.fragments[0]
+            );
+          deployer = await factory.deploy(...constructorParams);
+        } else {
+          deployer = await factory.deploy();
+        }
 
         if (this.frontendFilesGenerator) {
           await this.frontendFilesGenerator.save(
@@ -60,7 +61,10 @@ export class Deployer {
           );
         }
 
-        // if (this.reactComponentsGenerator) {}
+        if (this.reactComponentsGenerator) {
+          await this.reactComponentsGenerator.generate(contractName);
+        }
+
         return await deployer.deployed();
       });
 

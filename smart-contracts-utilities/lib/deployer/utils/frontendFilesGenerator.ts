@@ -3,7 +3,7 @@ import fs from "node:fs";
 import { artifacts } from "hardhat";
 
 export class FrontendFilesGenerator {
-  frontendContractsDir = join(
+  private frontendContractsDirTarget = join(
     __dirname,
     "..",
     "..",
@@ -13,21 +13,21 @@ export class FrontendFilesGenerator {
     "contracts"
   );
 
-  constructor(frontendContractsDir?: string) {
-    if (frontendContractsDir) {
-      if (!fs.existsSync(frontendContractsDir))
+  constructor(frontendContractsDirTarget?: string) {
+    if (frontendContractsDirTarget) {
+      if (!fs.existsSync(frontendContractsDirTarget))
         throw new Error("THE_SPECIFIED_PATH_CANNOT_BE_FOUND");
-      this.frontendContractsDir = frontendContractsDir;
+      this.frontendContractsDirTarget = frontendContractsDirTarget;
     }
   }
 
   async save(contractName: string, contractAddress: string): Promise<void> {
     try {
-      if (!fs.existsSync(this.frontendContractsDir)) {
-        fs.mkdirSync(this.frontendContractsDir);
+      if (!fs.existsSync(this.frontendContractsDirTarget)) {
+        fs.mkdirSync(this.frontendContractsDirTarget);
       } else {
-        fs.rmSync(this.frontendContractsDir, { recursive: true });
-        fs.mkdirSync(this.frontendContractsDir);
+        fs.rmSync(this.frontendContractsDirTarget, { recursive: true });
+        fs.mkdirSync(this.frontendContractsDirTarget);
       }
 
       const contractsArtifact = artifacts.readArtifactSync(contractName);
@@ -38,13 +38,13 @@ export class FrontendFilesGenerator {
       };
 
       fs.writeFileSync(
-        join(this.frontendContractsDir, `${contractName}.json`),
+        join(this.frontendContractsDirTarget, `${contractName}.json`),
         JSON.stringify(contract, null, 2)
       );
 
       console.log({
         message: "CONTRACT_FILES_GENERATED_SUCCESSFULLY",
-        path: this.frontendContractsDir + `${contractName}.json`,
+        path: this.frontendContractsDirTarget + `${contractName}.json`,
       });
     } catch (error) {
       console.error({

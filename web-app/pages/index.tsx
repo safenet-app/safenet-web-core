@@ -1,11 +1,12 @@
 import Head from "next/head";
-import { ThemeChanger } from "./components/ThemeChange";
-import  Event  from "./components/_events";
-import  Donation  from "./components/_donations";
+import { ThemeChanger } from "../components/ThemeChange";
+import useEthereumContext from "../hooks/ethereumContext";
+import { EthereumContext } from "../hooks/ethereumContext";
+import WalletConnectHandler from "@/components/wallet/WalletConnectHandler";
+import WalletAddress from "../components/wallet/WalletAddress";
 
 export default function Home() {
-  let event = new Event();
-  let donation = new Donation();
+  const { walletConnected } = useEthereumContext() as EthereumContext;
   return (
     <>
       <Head>
@@ -15,14 +16,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-      <div className="Event">
-        {/* <button onClick={event.createEvent}>- Create Event</button>
-        <button onClick={event.deleteEvent}>- Delete Event</button>
-        <button onClick={event.updateEvent}>- Update Event</button>
-        <button onClick={donation.createDonation}>- Create Donation</button>
-        <button onClick={donation.deleteDonation}>- Delete Donation</button>
-        <button onClick={donation.updateDonation}>- Update Donation</button> */}
-      </div>        
+        {!walletConnected ? (
+          <WalletConnectHandler />
+        ) : (
+          <>
+            <WalletAddress /> <ThemeChanger />
+          </>
+        )}
       </main>
     </>
   );
