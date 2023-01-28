@@ -7,7 +7,8 @@ console.log(eventsCollection)
 
 export default class Event {
   
-    async createEvent(id: string, date:string, time:string,estimatedDate: string,reportingUser: string, shortDescription: string,location: string){
+    async createEvent(id: string, date:string, time:string,estimatedDate: string,reportingUser: string, 
+      shortDescription: string,location: string){
       try {
         const result = await eventsCollection.create([id, date, time, estimatedDate, reportingUser, shortDescription, location]);
         console.log(result);
@@ -17,9 +18,9 @@ export default class Event {
       }
     }
     
-    async deleteEvent(){
+    async deleteEvent(id: string){
       try {
-        const result = await eventsCollection.record('1').call('del',[]);
+        const result = await eventsCollection.record(id).call('del',[]);
         console.log(result);
       }
       catch (error){
@@ -27,9 +28,11 @@ export default class Event {
       }
     }
 
-    async updateEvent(){
+    async updateEvent(id: string, date:string, time:string,estimatedDate: string,reportingUser: string, shortDescription: string,
+      location: string, files: string[], adminAddresses: string[], status: string, detailedDescription: string, statusMessage: string){
       try {
-        const result = await eventsCollection.record("1").call("setEvent", ['25012023', '1200', '24012023', 'Marge Simpson', 'derrumbe', 'La mesa-Cundinamarca', ['placeholder'], ['0x12345'], "approved", 'derrumbe en area montañosa, 3 casas destruidas', "all info ok" ]);      
+        const result = await eventsCollection.record(id).call("setEvent", [date, time, estimatedDate, reportingUser, shortDescription, 
+          location, files, adminAddresses, status, detailedDescription, statusMessage ]);      
         console.log(result);
       }
       catch (error){

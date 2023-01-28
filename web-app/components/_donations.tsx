@@ -8,22 +8,26 @@ console.log(donationsCollection)
 
 export default class Donation {
   
-
-  async createDonation(id: string, idEvent:string,donorName: string, location: string, materials?: map<string,number>, donorAddress: string,amount: number){
+  async createDonation(id: string, idEvent:string, donorName: string, location: string, materials?: Map<string,number>, donorAddress?: string, amount?: number){
     try {
-      let materialsObject =   Object.fromEntries(materials);
-      const data = await donationsCollection.create([id, idEvent, donorName, location,materialsObject , donorAddress, amount]);
-      console.log(data)
-    } 
-    catch (error) {
+      if (materials) { let materialsObject =   Object.fromEntries(materials) 
+        const data = await donationsCollection.create([id, idEvent, donorName, location,materialsObject])
+        console.log(data)
+      } else if (donorAddress && amount){
+        const data = await donationsCollection.create([id, idEvent, donorName, donorAddress, amount])
+        console.log(data)
+      }
+      }
+      catch (error) {
       console.error(error);
     }
   }
 
-  async updateDonation(){
+  async updateDonation(id: string, idEvent: string, donorName: string, location: string, materials: Map<string,number>, 
+    donorAddress: string, amount: number, status: string, statusMessage: string){
     try {
-      // let materialsObject =   Object.fromEntries(materials);
-      const  data = await donationsCollection.record('1').call("setDonation", ['1','Marge Simpson','Villavicencio-Meta',{'tejas':'10', 'bultos':'5'}, '0x123456', 4]);
+      let materialsObject =   Object.fromEntries(materials);
+      const  data = await donationsCollection.record(id).call("setDonation", [idEvent, donorName, location, materialsObject, donorAddress, amount, status, statusMessage]);
       return data;
     }
       catch(error){
@@ -31,9 +35,9 @@ export default class Donation {
     }
   }
 
-  async deleteDonation(){
+  async deleteDonation(id: string){
     try {
-        const  data = await donationsCollection.record('1').call("del", []);
+        const  data = await donationsCollection.record(id).call("del", []);
         return data;
     }
     catch(error){

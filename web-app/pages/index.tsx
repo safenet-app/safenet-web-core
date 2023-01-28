@@ -16,12 +16,12 @@ export default function Home() {
       </Head>
       <main>
       <div className="Event">
-        <button onClick={event.createEvent}>- Create Event</button>
+        {/* <button onClick={event.createEvent}>- Create Event</button>
         <button onClick={event.deleteEvent}>- Delete Event</button>
         <button onClick={event.updateEvent}>- Update Event</button>
         <button onClick={donation.createDonation}>- Create Donation</button>
         <button onClick={donation.deleteDonation}>- Delete Donation</button>
-        <button onClick={donation.updateDonation}>- Update Donation</button>
+        <button onClick={donation.updateDonation}>- Update Donation</button> */}
       </div>        
       </main>
     </>
