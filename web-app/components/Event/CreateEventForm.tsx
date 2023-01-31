@@ -1,11 +1,12 @@
 import { Field, Form, Formik } from "formik";
 import { CreateEventDTO } from "../../types/index";
 import styles from "./Event.module.css";
-import { useAccount } from "wagmi";
+//import { useAccount } from 'wagmi';
 import { getHashId } from "../../lib/utils";
 
 export default function CreateEventForm() {
-  const { address } = useAccount();
+  //const { address } = useAccount();
+  const address = "0x0e425124C49aD293b2577D948197dA9d77B810E5";
   const initalValues: CreateEventDTO = {
     id: "",
     timestamp: new Date().getTime(),
@@ -15,7 +16,7 @@ export default function CreateEventForm() {
     estimatedDate: new Date().toLocaleDateString(),
   };
   return (
-    <div className="bg-white/50 rounded-md backdrop-blur-sm ">
+    <div className="bg-black/40 rounded-md backdrop-blur-sm ">
       <div className="border-b py-5 px-10">
         <h1 className="font-bold text-3xl">Create event</h1>
       </div>
