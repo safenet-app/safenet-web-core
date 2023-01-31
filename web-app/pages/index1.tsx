@@ -25,11 +25,10 @@ export default function Home() {
           <WalletConnectHandler />
         ) : (
           <>
-       
         
             <WalletAddress /> <ThemeChanger />
             <button type ="button">Create event</button>
-          
+            
 
           </>
         )}
