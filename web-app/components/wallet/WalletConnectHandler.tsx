@@ -1,5 +1,5 @@
-import useEthereumContext from "../../hooks/ethereumContext";
-import { EthereumContext } from "../../hooks/ethereumContext";
+import {useEthereumContext, EthereumContext} from "../../hooks/ethereumContext";
+//import { EthereumContext } from "../../hooks/ethereumContext";
 export default function WalletConnectHandler() {
   const { connectWallet } = useEthereumContext() as EthereumContext;
   return (

@@ -3,12 +3,12 @@ export interface DeleteEventDTO {
 }
 
 export interface CreateEventDTO extends DeleteEventDTO {
-  date: date;
   time: date;
+  date: Date;
   estimatedDate: string;
-  phoneNumber: string;
   reportingUser: string;
   shortDescription: string;
+  phoneNumber: string;
   location: string;
   files: string[];
 }
@@ -19,4 +19,16 @@ export interface UpdateEventDTO extends CreateEventDTO {
   status: string;
   detailedDescription: string;
   statusMessage: string;
+}
+export interface DonationDTO  {
+  id: string;
+  idEvent?:string;
+  donorName?: string;
+  location?: string;
+  materials?: map<string, number>;
+  donorAddress?: string;
+  currency?: string; // USDC for now
+  amount?: number;
+  status?: string;
+  statusMessage?:string;
 }
