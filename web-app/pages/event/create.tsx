@@ -6,10 +6,7 @@ export default function create() {
   console.log(walletConnected);
   return (
     <div className="flex flex-col items-center max-w-screen-lg">
-     {/*!walletConnected ?   ( console.log(walletConnected));:
-          
-              {/*<CreateEventForm />*/}
-                
+                  
       <CreateEventForm />
     </div>
   );
