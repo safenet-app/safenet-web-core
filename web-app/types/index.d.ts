@@ -17,3 +17,15 @@ export interface UpdateEventDTO extends CreateEventDTO {
   detailedDescription: string;
   statusMessage: string;
 }
+export interface DonationDTO  {
+  id: string;
+  idEvent?:string;
+  donorName?: string;
+  location?: string;
+  materials?: map<string, number>;
+  donorAddress?: string;
+  currency?: string; // USDC for now
+  amount?: number;
+  status?: string;
+  statusMessage?:string;
+}
