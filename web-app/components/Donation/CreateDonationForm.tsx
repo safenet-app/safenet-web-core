@@ -37,8 +37,47 @@ export default function CreateDonationForm() {
                             <label className={styles.label} htmlFor="id">
                                 id
                             </label>
-                            <Field className={styles.input} id="id" name="id" disable />
+                            <Field className={styles.input} id="id" name="id"  />
                         </div>
+                        <div className={styles.inputGroup}>
+                            <label className={styles.label} htmlFor="idEvent">
+                                id Event
+                            </label>
+                            <Field className={styles.input} id="idEvent" name="idEvent"  />
+                        </div>
+                        <div className={styles.inputGroup}>
+                            <label className={styles.label} htmlFor="donorName">
+                            Donor name
+                            </label>
+                            <Field className={styles.input} id="donorName" name="donorName"  />
+                        </div>
+                        <div className={styles.inputGroup}>
+                            <label className={styles.label} htmlFor="Location">
+                            Location
+                            </label>
+                            <Field className={styles.input} id="Location" name="Location"  />
+                        </div>
+                        <div className={styles.inputGroup}>
+                            <label className={styles.label} htmlFor="Material">
+                            Material
+                            </label>
+                            <Field className={styles.input} id="Material" name="Material"  />
+                        </div>
+                        <div className={styles.inputGroup}>
+                            <label className={styles.label} htmlFor="Quantity">
+                            Quantity
+                            </label>
+                            <Field className={styles.input} id="Quantity" name="Quantity"  />
+                        </div>
+                        <div className={styles.inputGroup}>
+                            <label className={styles.label} htmlFor="donorAddress">
+                            Donor address
+                            </label>
+                            <Field className={styles.input} id="Donor address" name="Donor address"  />
+                        </div>
+
+                        
+                        
 
 
 
