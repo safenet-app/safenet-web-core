@@ -75,13 +75,26 @@ export default function CreateDonationForm() {
                             </label>
                             <Field className={styles.input} id="Donor address" name="Donor address"  />
                         </div>
-
-                        
-                        
-
-
-
-                       
+                        <div className={styles.inputGroup}>
+                            <label className={styles.label} htmlFor="Amount">
+                            Amount
+                            </label>
+                            <Field className={styles.input} id="Amount" name="Amount"  />
+                        </div>
+                        <div className={styles.inputGroup}>
+                            <label className={styles.label} htmlFor="Currency">
+                            Currency
+                            </label>
+                            <Field className={styles.input} id="Currency" name="Currency"  />
+                        </div>
+                        <div className={styles.inputGroup}>
+                            <label className={styles.label} htmlFor="Status">
+                            Status
+                            </label>
+                            <Field className={styles.input} id="Status" name="Status"  />
+                        </div>
+                   
+                                     
                         <button type="submit" className="bg-gray-500 rounded-md text-md p-2 mt-5">
                         Create
                         </button>
