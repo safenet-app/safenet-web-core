@@ -5,16 +5,17 @@ import {
   UpdateEventDTO,
 } from "../../types/index";
 
-const db = new Polybase({ defaultNamespace: "SafeNet" });
-const eventsCollection = db.collection("Events");
-console.log(eventsCollection);
 
+const db = new Polybase({ defaultNamespace: "safeNet" });
+const eventsCollection = db.collection("Events");
+console.log('collection', eventsCollection);
 export default class EventService {
   async createEvent({
     id,
     date,
     time,
     estimatedDate,
+    phoneNumber,
     reportingUser,
     shortDescription,
     location,
@@ -25,6 +26,7 @@ export default class EventService {
         date,
         time,
         estimatedDate,
+        phoneNumber,
         reportingUser,
         shortDescription,
         location,
