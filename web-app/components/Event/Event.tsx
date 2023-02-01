@@ -19,6 +19,7 @@ export default class EventService {
     reportingUser,
     shortDescription,
     location,
+    files,
   }: CreateEventDTO) {
     try {
       const result = await eventsCollection.create([
@@ -30,6 +31,7 @@ export default class EventService {
         reportingUser,
         shortDescription,
         location,
+        files,
       ]);
       console.log(result);
     } catch (error) {

@@ -10,6 +10,7 @@ export interface CreateEventDTO extends DeleteEventDTO {
   reportingUser: string;
   shortDescription: string;
   location: string;
+  files: string[];
 }
 
 export interface UpdateEventDTO extends CreateEventDTO {

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@lighthouse-web3/sdk": "^0.1.12",
     "@next/font": "13.1.5",
     "@polybase/client": "^0.3.22",
     "@types/node": "18.11.18",
@@ -22,7 +23,6 @@
     "ethereum-cryptography": "^1.1.2",
     "ethers": "^5.7.2",
     "formik": "^2.2.9",
-    "ethers": "^5.7.2",
     "next": "13.1.5",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
