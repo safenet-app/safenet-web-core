@@ -83,6 +83,7 @@ export default function CreateEventForm() {
                 id="estimatedDate"
                 name="estimatedDate"
                 type="date"
+                
               />
             </div>
 
