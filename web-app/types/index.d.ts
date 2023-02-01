@@ -3,8 +3,10 @@ export interface DeleteEventDTO {
 }
 
 export interface CreateEventDTO extends DeleteEventDTO {
-  timestamp: number;
+  date: date;
+  time: date;
   estimatedDate: string;
+  phoneNumber: string;
   reportingUser: string;
   shortDescription: string;
   location: string;
