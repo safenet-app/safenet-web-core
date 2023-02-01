@@ -27,7 +27,7 @@ export default function Home() {
           <>
        
         
-            <WalletAddress /> <ThemeChanger />
+            <WalletAddress /> 
             <button type ="button">Create event</button>
           
 
