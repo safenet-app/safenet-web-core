@@ -6,6 +6,7 @@ import uploader from "../lighthouse/lighthouse.jsx";
 //import { useAccount } from 'wagmi';
 import { getHashId } from "../../lib/utils";
 import EventService from "./Event";
+import { v4 as uuidv4 } from 'uuid';
 
 export default function CreateEventForm() {
   const [files, setFiles] = useState([] as any);
@@ -19,7 +20,7 @@ export default function CreateEventForm() {
   //const { address } = useAccount();
   // const address = "0x0e425124C49aD293b2577D948197dA9d77B810E5";
   const initialValues: CreateEventDTO = {
-    id: "",
+    id: uuidv4(),
     date: `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`,
     time: `${new Date().getHours()}:${new Date().getMinutes()}`,
     estimatedDate: new Date().toLocaleDateString(),
@@ -38,11 +39,13 @@ export default function CreateEventForm() {
         <Formik
           initialValues={initialValues}
           onSubmit={(values, actions) => {
-            const evtId = getHashId(Object.values(values));
+            
+            
+            /*const evtId = getHashId(Object.values(values));*/
             const eventService = new EventService
             eventService.createEvent(values)
             
-            values.id = evtId;
+           // values.id = evtId;
             
             console.log({ values, actions });
             

@@ -6,7 +6,7 @@ import {
 } from "../../types/index";
 
 
-const db = new Polybase({ defaultNamespace: "safeNet" });
+const db = new Polybase({ defaultNamespace: "SafeNet" });
 const eventsCollection = db.collection("Events");
 console.log('collection', eventsCollection);
 export default class EventService {
@@ -83,4 +83,28 @@ export default class EventService {
       console.error(error);
     }
   }
+  
+  async getAllEvents(){
+       try {
+         const {data} = await eventsCollection.get();
+         let ids: string[] = []; 
+        
+         for(var index = 0; index<data.length;index++){
+          
+          ids.push(await this.getID(data[index]));
+           
+         }
+         
+         return ids;
+      }
+        catch (error) {
+         console.error(error);
+       }
+  }
+ 
+  async getID(item:any){
+    const {data} = item;
+    return data.id;
+  }
+  
 }

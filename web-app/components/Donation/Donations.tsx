@@ -11,13 +11,18 @@ export default class Donation {
     idEvent: string,
     donorName: string,
     location: string,
-    materials?: Map<string, number>,
-    donorAddress?: string,
-    amount?: number
+    material:string,
+    quantity:number,
+    donorAddress: string,
+    amount: number
   ) {
     try {
-      if (materials) {
-        let materialsObject = Object.fromEntries(materials);
+      let tempMaterial =  new Map();
+      if (material.length!=0){
+          tempMaterial.set(material,quantity);
+      }
+      if (tempMaterial) {
+        let materialsObject = Object.fromEntries(tempMaterial);
         const data = await donationsCollection.create([
           id,
           idEvent,

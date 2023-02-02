@@ -32,3 +32,16 @@ export interface DonationDTO  {
   status?: string;
   statusMessage?:string;
 }
+export interface TempDonation  {
+  id: string;
+  idEvent?:string;
+  donorName?: string;
+  location?: string;
+  material?: string;
+  quantity?:number;
+  donorAddress?: string;
+  currency?: string; // USDC for now
+  amount?: number;
+  status?: string;
+  statusMessage?:string;
+}
