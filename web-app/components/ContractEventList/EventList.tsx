@@ -36,13 +36,19 @@ export const EventListComponent = () => {
         <>
         {events.map((value:EventContainer,index:number)=>{
             return(
-              <div >
-              <p > {value.id}</p>
-              <p > {value.date}</p>
-              <p > {value.time}</p>
-              <p > {value.location}</p>
-              <p > {value.shortDescription}</p>
-              </div>
+              <>
+              <p> {value.id}</p>
+              <p> {value.date}</p>
+              <p> {value.time}</p>
+              <p> {value.location}</p>
+              <p> {value.shortDescription}</p>
+              <p> {value.location}</p>
+              
+              {value.files.map((path:string,index2:number)=>{
+                 <p><img/></p>
+              })}
+
+              </>
             );
         }
 

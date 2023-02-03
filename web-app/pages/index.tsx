@@ -9,7 +9,7 @@ import { EventListComponent } from "@/components/ContractEventList/EventList";
 
 
 export default function Home() {
-  const { walletConnected,userAddress } = useEthereumContext() as EthereumContext;
+  //const { walletConnected,userAddress } = useEthereumContext() as EthereumContext;
   return (
     <>
         
