@@ -108,7 +108,8 @@ export default class EventService {
   }
   async getAllActiveEvents(){
         try {
-          const {data} = await eventsCollection.where("status", "==", " Approved").get();
+          const {data} = await eventsCollection.where("status", "==", "Approved").get();
+          return data;
         } catch (error) {
           
         }
