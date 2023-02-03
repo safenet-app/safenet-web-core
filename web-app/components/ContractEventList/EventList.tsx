@@ -7,7 +7,7 @@ export const EventListComponent = () => {
 
     const [events,setEvents] = useState([] as EventContainer[]);
     useEffect(() => {
-
+       
         idExtractor();
         
 
@@ -16,6 +16,7 @@ export const EventListComponent = () => {
         }
     }, []);
     const idExtractor = async () => {
+      
 
         const eventService = new EventService;
         const promise1 = new Promise(async (resolve, reject) => {

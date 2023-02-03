@@ -89,7 +89,7 @@ export default class Donation {
     try {
       
       let {data} =  await donationsCollection.where("idEvent", "==",_idEvent).get();
-      data = data.filter((item)=>{return item.data.status=="Active"});
+      data = data.filter((item)=>{return item.data.status==" Approved"});
       return data;
     } 
     catch (error) {
