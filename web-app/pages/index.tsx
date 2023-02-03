@@ -4,6 +4,7 @@ import WalletAddress from "@/components/Wallet/WalletAddress";
 import WalletConnectHandler from "@/components/Wallet/WalletConnectHandler";
 import {useEthereumContext,EthereumContext, EthereumContextProvider} from "../hooks/ethereumContext"
 import { useRouter } from 'next/router'
+import { EventListComponent } from "@/components/ContractEventList/EventList";
 
 
 
@@ -12,7 +13,8 @@ export default function Home() {
   return (
     <>
         <p>{walletConnected.toString()}</p>
-        <p>{userAddress}</p>  
+        <p>{userAddress}</p>
+        <div><EventListComponent/></div>  
     </>
   );
 }
