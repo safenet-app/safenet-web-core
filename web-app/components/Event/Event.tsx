@@ -106,5 +106,12 @@ export default class EventService {
     const {data} = item;
     return data.id;
   }
+  async getAllActiveEvents(){
+        try {
+          const {data} = await eventsCollection.where("status", "==", "Active").get();
+        } catch (error) {
+          
+        }
+  }
   
 }
