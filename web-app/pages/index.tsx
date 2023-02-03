@@ -12,8 +12,7 @@ export default function Home() {
   const { walletConnected,userAddress } = useEthereumContext() as EthereumContext;
   return (
     <>
-        <p>{walletConnected.toString()}</p>
-        <p>{userAddress}</p>
+        
         <div><EventListComponent/></div>  
     </>
   );
