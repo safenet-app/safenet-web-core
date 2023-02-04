@@ -5,18 +5,24 @@ import { useEffect, useState } from "react";
 import { Collection } from "typescript";
 import EventService from "../Event/Event";
 import EventContainer from "./EventContainer";
+import { useRouter } from "next/router";
+
 
 export const EventListComponent = () => {
+    const router = useRouter();
 
-
+    
     const [events, setEvents] = useState([] as any);
+    const handleSubmit = (e:any) => {
+        // e.preventDefault();
+        // console.log(value)
+        router.push(`/event/eventDetails`);
+      }
     useEffect(() => {
 
         idExtractor();
 
-
         return () => {
-
         }
     }, []);
 
@@ -36,6 +42,7 @@ export const EventListComponent = () => {
     return (
         <>
             {events.map((data: EventContainer, index: number) => {
+                console.log(data)
                 return (
                     <>
                         <div className="flex justify-center">
@@ -105,7 +112,9 @@ export const EventListComponent = () => {
 
                                 </div>
                                 <br />
-                                <p><button type="button" className=" inline-block px-6 py-2.5 bg-gray-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-600 hover:shadow-lg focus:bg-gray-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Details</button></p>
+                                <p><button type="button" onClick={handleSubmit} className=" inline-block px-6 py-2.5 bg-gray-700 text-white font-medium text-xs 
+                                leading-tight uppercase rounded shadow-md hover:bg-gray-600 hover:shadow-lg focus:bg-gray-800 focus:shadow-lg 
+                                focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Details</button></p>
                             </div>
                         </div>
 

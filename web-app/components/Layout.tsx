@@ -1,3 +1,5 @@
+"use client";
+
 import useEthereumContext, { EthereumContext, EthereumContextProvider } from "@/hooks/ethereumContext";
 import { ThemeProvider } from "next-themes";
 import Head from "next/head";
