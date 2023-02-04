@@ -13,8 +13,7 @@ export default async function uploader(e) {
     console.log('File Status:', output);
     console.log('Visit at https://gateway.lighthouse.storage/ipfs/' + output.data.Hash);
     return (
-     {hash: output.data.Hash, path:`https://gateway.lighthouse.storage/ipfs/ +${output.data.Hash}`}
-    );
+     {hash: output.data.Hash});
     /*
       output:
         {
@@ -26,7 +25,3 @@ export default async function uploader(e) {
     */
 
   }
-
-
-  
-

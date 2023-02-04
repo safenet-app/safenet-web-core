@@ -3,8 +3,8 @@ export interface DeleteEventDTO {
 }
 
 export interface CreateEventDTO extends DeleteEventDTO {
-  time: date;
-  date: Date;
+  time: string;
+  date: string;
   estimatedDate: string;
   reportingUser: string;
   shortDescription: string;
@@ -37,6 +37,7 @@ export interface TempDonation  {
   idEvent?:string;
   donorName?: string;
   location?: string;
+  materials?:[string];
   material?: string;
   quantity?:number;
   donorAddress?: string;
@@ -44,4 +45,5 @@ export interface TempDonation  {
   amount?: number;
   status?: string;
   statusMessage?:string;
+  donationType:string;
 }

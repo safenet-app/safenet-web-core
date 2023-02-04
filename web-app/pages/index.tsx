@@ -10,9 +10,10 @@ import { useRouter } from 'next/router'
 export default function Home() {
   const { walletConnected,userAddress } = useEthereumContext() as EthereumContext;
   return (
+    console.log(userAddress),
     <>
         <p>{walletConnected.toString()}</p>
-        <p>{userAddress}</p>  
+        <p>{userAddress}</p>
     </>
   );
 }
