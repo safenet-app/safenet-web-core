@@ -9,12 +9,17 @@ import EventService from "./Event";
 import { v4 as uuidv4 } from 'uuid';
 
 export default function CreateEventForm() {
+
+  const notice= () => {
+    alert("Event recorded, we will check it as soon as possible!")
+  }
+
   const [files, setFiles] = useState([] as any);
 
   const upload = async(e:any) => {
     const result = await uploader(e)
-    setFiles([...files, result.path])
-    console.log(files)
+    setFiles([...files, `https://gateway.lighthouse.storage/ipfs/${result.hash}`])
+    // console.log(`https://gateway.lighthouse.storage/ipfs/${result.hash}`)
   }
 
   //const { address } = useAccount();
@@ -145,10 +150,7 @@ export default function CreateEventForm() {
                 />
             </div>
 
-            <button
-              type="submit"
-              className="bg-emerald-300 rounded-md text-md p-2 mt-5"
-            >
+            <button type="submit" className="bg-emerald-300 rounded-md text-md p-2 mt-5" onClick={notice}>
               Create Event
             </button>
           </Form>
