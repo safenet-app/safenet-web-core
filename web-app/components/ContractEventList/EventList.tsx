@@ -45,7 +45,7 @@ export const EventListComponent = () => {
               <p> {value.location}</p>
               
               {value.files.map((path:string,index2:number)=>{
-                 <p><img/></p>
+                 <p><img src={path} sizes="(min-width: 600px) 200px, 50vw"></img></p>
               })}
 
               </>
