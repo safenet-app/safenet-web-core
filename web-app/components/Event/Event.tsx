@@ -1,9 +1,10 @@
-import { Polybase } from "@polybase/client";
+import { CollectionRecordResponse, Polybase } from "@polybase/client";
 import {
   DeleteEventDTO,
   CreateEventDTO,
   UpdateEventDTO,
 } from "../../types/index";
+import EventContainer from "../ContractEventList/EventContainer";
 
 
 const db = new Polybase({ defaultNamespace: "SafeNet" });
@@ -105,6 +106,18 @@ export default class EventService {
   async getID(item:any){
     const {data} = item;
     return data.id;
+  }
+  async getAllActiveEvents() {
+    try {
+      const { data } = await eventsCollection.where("status", "==", "Approved").get();
+      let eventList: EventContainer[] = [];
+      for (let index: number = 0; index < data.length; index++) {
+        eventList.push(data[index].data as EventContainer);
+      }
+      return eventList;
+    } catch (error) {
+      console.error(error);
+    }
   }
   
 }

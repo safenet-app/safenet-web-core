@@ -85,4 +85,16 @@ export default class Donation {
       console.error(error);
     }
   }
+  async getActiveDonationsByEvent(_idEvent: string){
+    try {
+      
+      let {data} =  await donationsCollection.where("idEvent", "==",_idEvent).get();
+      data = data.filter((item)=>{return item.data.status==" Approved"});
+      return data;
+    } 
+    catch (error) {
+      console.error(error);
+    }
+  }
+ 
 }
