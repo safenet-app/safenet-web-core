@@ -64,20 +64,20 @@ export const EventListComponent = () => {
 
                                                     <tbody>
 
-                                                        <tr className="bg-gray-500 border-b">
+                                                        <tr className="bg-gray-900 border-b">
                                                             <td className="px-5 py-4 whitespace-nowrap text-sm font-medium text-white-900">Date</td>
                                                             <td className="text-sm text-white-900 font-light px-6 py-4 whitespace-nowrap">
                                                                 {data.date}
                                                             </td>
                                                         </tr>
 
-                                                        <tr className="bg-gray-500 border-b">
+                                                        <tr className="bg-gray-900 border-b">
                                                             <td className="px-5 py-4 whitespace-nowrap text-sm font-medium text-white-900">Time</td>
                                                             <td className="text-sm text-white-900 font-light px-6 py-4 whitespace-nowrap">
                                                                 {data.time}
                                                             </td>
                                                         </tr>
-                                                        <tr className="bg-gray-500 border-b">
+                                                        <tr className="bg-gray-900 border-b">
                                                             <td className="px-5 py-4 whitespace-nowrap text-sm font-medium text-white-900">Location</td>
                                                             <td className="text-sm text-white-900 font-light px-6 py-4 whitespace-nowrap">
                                                                 {data.location}
