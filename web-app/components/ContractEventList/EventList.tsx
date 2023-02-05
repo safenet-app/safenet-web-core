@@ -49,10 +49,10 @@ export const EventListComponent = () => {
                 return (
                     <>
                       
-                        <div className="flex justify-center bg-black/15">
-                            <div className="block rounded-lg w-1/2 m-10 py-5 bg-gray-800 rounded-md backdrop-blur-sm text-center border-slate-700">
-                                <div className="py-3 px-6 border-b border-gray-300">
-                                    <h5 className="text-white-900 text-xl font-medium mb-2">{data.shortDescription}</h5>
+                        <div className="flex justify-center bg-black/15 ">
+                            <div className="block rounded-lg w-1/2 m-10 py-5 bg-gray-800 rounded-md backdrop-blur-sm text-center border-slate-100 border border-lime-600">
+                                <div className="py-3 px-6  ">
+                                    <h5 className="text-green-400 text-xl font-medium mb-2">{data.shortDescription}</h5>
                                 </div>
 
 
@@ -61,26 +61,26 @@ export const EventListComponent = () => {
                                         <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                                             <div className="overflow-hidden">
 
-                                                <table className="min-w-full">
+                                                <table className="min-w-full  ">
 
                                                     <tbody>
 
-                                                        <tr className="bg-gray-900 border-b">
-                                                            <td className="px-5 py-4 whitespace-nowrap text-sm font-medium text-white-900">Date</td>
-                                                            <td className="text-sm text-white-900 font-light px-6 py-4 whitespace-nowrap">
+                                                        <tr className="bg-gray-800 border border-lime-500">
+                                                            <td className="px-5 py-4 whitespace-nowrap text-sm font-medium text-green-400">Date</td>
+                                                            <td className="text-sm text-green-400 font-light px-6 py-4 whitespace-nowrap  ">
                                                                 {data.date}
                                                             </td>
                                                         </tr>
 
-                                                        <tr className="bg-gray-900 border-b">
-                                                            <td className="px-5 py-4 whitespace-nowrap text-sm font-medium text-white-900">Time</td>
-                                                            <td className="text-sm text-white-900 font-light px-6 py-4 whitespace-nowrap">
+                                                        <tr className="bg-gray-800 border border-lime-500">
+                                                            <td className="px-5 py-4 whitespace-nowrap text-sm font-medium text-green-400">Time</td>
+                                                            <td className="text-sm text-green-400 font-light px-6 py-4 whitespace-nowrap">
                                                                 {data.time}
                                                             </td>
                                                         </tr>
-                                                        <tr className="bg-gray-900 border-b">
-                                                            <td className="px-5 py-4 whitespace-nowrap text-sm font-medium text-white-900">Location</td>
-                                                            <td className="text-sm text-white-900 font-light px-6 py-4 whitespace-nowrap">
+                                                        <tr className="bg-gray-800 border border-lime-500">
+                                                            <td className="px-5 py-4 whitespace-nowrap text-sm font-medium text-green-400">Location</td>
+                                                            <td className="text-sm text-green-400 font-light px-6 py-4 whitespace-nowrap">
                                                                 {data.location}
                                                             </td>
                                                         </tr>
@@ -97,7 +97,7 @@ export const EventListComponent = () => {
 
 
                                 
-                                <div className="py-3 px-6 border-t border-gray-300 text-white-600">
+                                <div className="py-3 px-6  border-gray-300 text-green-400  ">
                                     Media files
                                 </div>
                                 <div className="flex justify-center ">
@@ -106,7 +106,7 @@ export const EventListComponent = () => {
                                 
                                     <img
                                         src={path}
-                                        className="p-1 bg-white border rounded max-w-sm"                                   
+                                        className="p-1 bg-green-900 border rounded max-w-sm"                                   
                                     />
                                 
                                 </>
@@ -116,7 +116,7 @@ export const EventListComponent = () => {
 
                                 </div>
                                 <br />
-                                <p><button type="button" onClick={() => handleSubmit(data)} className=" inline-block px-6 py-2.5 bg-gray-700 text-white font-medium text-xs 
+                                <p><button type="button" onClick={() => handleSubmit(data)} className=" inline-block px-6 py-2.5 bg-gray-700 text-green-400 font-medium text-xs 
                                 leading-tight uppercase rounded shadow-md hover:bg-gray-600 hover:shadow-lg focus:bg-gray-800 focus:shadow-lg 
                                 focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out">Details</button></p>
                             </div>
