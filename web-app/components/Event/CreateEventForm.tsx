@@ -13,6 +13,7 @@ export default function CreateEventForm() {
   
 
   const notice= () => {
+    
     alert("Event recorded, we will check it as soon as possible!")
   }
 
@@ -38,8 +39,8 @@ export default function CreateEventForm() {
     files: files,
   };
   return (
-    
-   <div className="bg-black/40 rounded-md backdrop-blur-sm center ">
+   
+   <div className="bg-black/40 rounded-md backdrop-blur-sm place-content-center">
       <div className="border-b py-5 px-10">
         <h1 className="font-bold text-3xl">Create event</h1>
       </div>
