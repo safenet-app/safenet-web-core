@@ -14,9 +14,10 @@ export const EventListComponent = () => {
     
     const [events, setEvents] = useState([] as any);
     const handleSubmit = (e:any) => {
-        // e.preventDefault();
+         e.preventDefault();
         // console.log(value)
-        router.push(`/event/eventDetails`);
+        router.push("/event/EventDetails");
+                    
       }
     useEffect(() => {
 
