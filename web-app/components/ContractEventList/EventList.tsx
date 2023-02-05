@@ -48,8 +48,9 @@ export const EventListComponent = () => {
                 console.log(data)
                 return (
                     <>
-                        <div className="flex justify-center">
-                            <div className="block rounded-lg w-1/2 m-10 py-5 bg-black/40 rounded-md backdrop-blur-sm text-center">
+                      
+                        <div className="flex justify-center bg-black/15">
+                            <div className="block rounded-lg w-1/2 m-10 py-5 bg-gray-800 rounded-md backdrop-blur-sm text-center border-slate-700">
                                 <div className="py-3 px-6 border-b border-gray-300">
                                     <h5 className="text-white-900 text-xl font-medium mb-2">{data.shortDescription}</h5>
                                 </div>
@@ -90,7 +91,7 @@ export const EventListComponent = () => {
                                         </div>
                                     </div>
                                 </div>
-
+                                
 
 
 
@@ -120,7 +121,7 @@ export const EventListComponent = () => {
                                 focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out">Details</button></p>
                             </div>
                         </div>
-
+                       
 
 
                     </>

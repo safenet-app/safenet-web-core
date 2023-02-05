@@ -24,12 +24,12 @@ const Buttons = () => {
           Home
         </button>
 
-        <button type="button" className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-green-700 focus:z-10 focus:ring-2 focus:ring-green-700 focus:text-green-700 dark:bg-gray-700 dark:border-gray-600 dark:text-green-400 dark:hover:text-green300 dark:hover:bg-gray-600 dark:focus:ring-green-500 dark:focus:text-white"
+        <button type="button" className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-green-700 focus:z-10 focus:ring-2 focus:ring-green-700 focus:text-green-700 dark:bg-gray-700 dark:border-gray-600 dark:text-green-400 dark:hover:text-green300 dark:hover:bg-gray-600 dark:focus:ring-green-500 dark:focus:text-green"
           onClick={handleClick} value={"/event/create"}>
           Events
         </button>
 
-        <button type="button" className="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100 hover:text-green-700 focus:z-10 focus:ring-2 focus:ring-green-700 focus:text-green-700 dark:bg-gray-700 dark:border-gray-600 dark:text-green-400 dark:hover:text-green-300 dark:hover:bg-gray-600 dark:focus:ring-green-500 dark:focus:text-white"
+        <button type="button" className="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100 hover:text-green-700 focus:z-10 focus:ring-2 focus:ring-green-700 focus:text-green-700 dark:bg-gray-700 dark:border-gray-600 dark:text-green-400 dark:hover:text-green-300 dark:hover:bg-gray-600 dark:focus:ring-green-500 dark:focus:text-green"
           onClick={handleClick} value={"/donation/create"} >
           Donations
         </button>
