@@ -26,7 +26,7 @@ export default function eventDetails(){
     {/* <p className="mt-1 text-gray-500">{JSON.stringify(result)}</p> */}
     <div className="mt-4 flex gap-2">
       <span
-        className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-xs font-semibold text-blue-600"
+        className="inline-flex items-center gap-1 rounded-full bg-green-50 px-2 py-1 text-xs font-semibold text-green-600"
       >
         reported on: {router.query.date} - {router.query.time}
       </span>
