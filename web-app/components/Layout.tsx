@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import React, { useContext } from "react";
 import WalletAddress from "./Wallet/WalletAddress";
 import WalletConnectHandler from "./Wallet/WalletConnectHandler";
+import Image from 'next/image'
 
 
 const Buttons = () => {
@@ -53,8 +54,10 @@ const Header = () => {
       </Head>
 
       <main>
-        <p className="font-sans hover:font-serif text-2xl text-center">
-          SafeNet</p>
+        <div className="flex flex-wrap justify-center">
+        <Image src="/logo.png" alt="SafeNet" width="350" height="150" />
+</div>
+       
 
         {!walletConnected ? (
           <>
