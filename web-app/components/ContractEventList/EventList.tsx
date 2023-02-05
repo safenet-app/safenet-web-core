@@ -49,8 +49,8 @@ export const EventListComponent = () => {
                 return (
                     <>
                       
-                        <div className="flex justify-center bg-black/15 ">
-                            <div className="block rounded-lg w-1/2 m-10 py-5 bg-gray-800 rounded-md backdrop-blur-sm text-center border-slate-100 border border-lime-600">
+                        <div className="flex justify-center">
+                            <div className="block rounded-lg w-1/2 m-10 py-5  rounded-md backdrop-blur-sm text-center border-slate-100 border border-lime-600 background-color: rgb(101 163 13)">
                                 <div className="py-3 px-6  ">
                                     <h5 className="text-green-400 text-xl font-medium mb-2">{data.shortDescription}</h5>
                                 </div>

@@ -61,7 +61,7 @@ export default function CreateEventForm() {
           }}
           enableReinitialize={true}
           >
-          <Form className="flex flex-col gap-2">
+          <Form className="flex flex-col gap-2 justify-center">
             <div className={styles.inputGroup}>
               <label className={styles.label} htmlFor="date">
                 Date

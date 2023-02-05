@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 html {
-  @apply h-screen font-sans  from-black  ;
+  @apply h-screen font-sans    ;
 }
