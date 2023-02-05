@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 html {
-  @apply h-screen font-sans bg-gradient-to-b from-gray-900 via-emerald-50 to-black;
+  @apply h-screen font-sans  from-black  ;
 }
