@@ -39,7 +39,7 @@ export default function CreateEventForm() {
   };
   return (
     
-   <div className="bg-black/40 rounded-md backdrop-blur-sm ">
+   <div className="bg-black/40 rounded-md backdrop-blur-sm center ">
       <div className="border-b py-5 px-10">
         <h1 className="font-bold text-3xl">Create event</h1>
       </div>
