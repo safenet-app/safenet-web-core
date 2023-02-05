@@ -8,7 +8,9 @@ import { getHashId } from "../../lib/utils";
 import EventService from "./Event";
 import { v4 as uuidv4 } from 'uuid';
 
+
 export default function CreateEventForm() {
+  
 
   const notice= () => {
     alert("Event recorded, we will check it as soon as possible!")
