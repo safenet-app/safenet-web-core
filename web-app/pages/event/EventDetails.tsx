@@ -20,8 +20,8 @@ export default function eventDetails(){
   />
   <div className="p-4">
     <p className="mb-1 text-sm text-primary-500">{router.query.reportingUser} • estimated date:   <time>{router.query.estimatedDate}</time></p>
-    <h6 className="text-xl font-medium text-gray-900">{router.query.location}</h6>
-    <h3 className="text-xl font-medium text-gray-900">{router.query.shortDescription}</h3>
+    <h3 className="text-2xl font-bold text-gray-900 mb-3">{router.query.location}</h3>
+    <h5 className="text-sm text-gray-900">{router.query.shortDescription}</h5>
 
     {/* <p className="mt-1 text-gray-500">{JSON.stringify(result)}</p> */}
     <div className="mt-4 flex gap-2">
