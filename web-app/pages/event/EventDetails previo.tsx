@@ -21,11 +21,11 @@ export default  function eventDetails(){
 
     return (
       <div className="mx-auto max-w-md overflow-hidden rounded-lg bg-white shadow">
-  <img
-    src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
-    className="aspect-video w-full object-cover"
-    alt=""
-  />
+        <img
+          src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+          className="aspect-video w-full object-cover w-"
+          alt=""
+        />
   <div className="p-4">
     <p className="mb-1 text-sm text-primary-500">Andrea Felsted • <time>18 Nov 2022</time></p>
     <h3 className="text-xl font-medium text-gray-900">Migrating to Sailboat UI</h3>
