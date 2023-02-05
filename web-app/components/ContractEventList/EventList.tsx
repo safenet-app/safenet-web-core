@@ -7,17 +7,20 @@ import EventService from "../Event/Event";
 import EventContainer from "./EventContainer";
 import { useRouter } from "next/router";
 
-
 export const EventListComponent = () => {
     const router = useRouter();
 
-    
-    const [events, setEvents] = useState([] as any);
-    const handleSubmit = (e:any) => {
+    const handleSubmit = (value: any) => {
         // e.preventDefault();
-        // console.log(value)
-        router.push(`/event/eventDetails`);
+        console.log(value)
+        // router.push(`/event/EventDetails?id=${value}`);
+        router.push({pathname: `/event/EventDetails`, query: { date:value.date, estimatedDate:value.estimatedDate, files: value.files,
+            id: value.id, location: value.location, phoneNumber: value.phoneNumber, reportingUser: value.reportingUser,
+            shortDescription: value.shortDescription, status: value.status, statusMessage: value.statusMessage, time: value.time
+        }}, `/event/EventDetails`);
       }
+
+    const [events, setEvents] = useState([] as any);
     useEffect(() => {
 
         idExtractor();
@@ -112,7 +115,7 @@ export const EventListComponent = () => {
 
                                 </div>
                                 <br />
-                                <p><button type="button" onClick={handleSubmit} className=" inline-block px-6 py-2.5 bg-gray-700 text-white font-medium text-xs 
+                                <p><button type="button" onClick={() => handleSubmit(data)} className=" inline-block px-6 py-2.5 bg-gray-700 text-white font-medium text-xs 
                                 leading-tight uppercase rounded shadow-md hover:bg-gray-600 hover:shadow-lg focus:bg-gray-800 focus:shadow-lg 
                                 focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Details</button></p>
                             </div>
