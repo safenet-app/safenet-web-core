@@ -49,7 +49,7 @@ export const EventListComponent = () => {
                 return (
                     <>
                         <div className="flex justify-center">
-                            <div className="block rounded-lg bg-black/40 rounded-md backdrop-blur-sm text-center">
+                            <div className="block rounded-lg w-1/2 m-10 py-5 bg-black/40 rounded-md backdrop-blur-sm text-center">
                                 <div className="py-3 px-6 border-b border-gray-300">
                                     <h5 className="text-white-900 text-xl font-medium mb-2">{data.shortDescription}</h5>
                                 </div>
