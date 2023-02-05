@@ -88,7 +88,7 @@ const Layout = ({ children }: any) => {
       <EthereumContextProvider>
         <Header />
         <Buttons/>
-        {children}
+        {children} 
       </EthereumContextProvider>
     </ThemeProvider>
   );
