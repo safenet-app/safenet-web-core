@@ -58,7 +58,7 @@ export default function CreateDonationForm() {
 
       <div className="self-center bg-black/40 rounded-md backdrop-blur-sm ">
           <div className="border-b py-5 px-10">
-              <h1 className="font-bold text-3xl">Create donation</h1>
+              <h1 className="font-bold text-3xl text-green-400">Create donation</h1>
           </div>
           <div className="py-5 px-20">
               <Formik
@@ -160,7 +160,7 @@ export default function CreateDonationForm() {
                       </div>
 
 
-                      <button type="submit" className="bg-gray-500 rounded-md text-md p-2 mt-5" onClick={notice}>
+                      <button type="submit" className="bg-gray-700 rounded-md text-md p-2 mt-5 text-green-400" onClick={notice}>
                           Create
                       </button>
                   </Form>

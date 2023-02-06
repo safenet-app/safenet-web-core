@@ -86,7 +86,7 @@ const Layout = ({ children }: any) => {
   return (
     <ThemeProvider>
       <EthereumContextProvider>
-        <Header />
+        <Header/>
         <Buttons/>
         {children} 
       </EthereumContextProvider>

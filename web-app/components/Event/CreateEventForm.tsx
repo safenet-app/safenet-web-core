@@ -42,7 +42,7 @@ export default function CreateEventForm() {
    
    <div className="bg-black/40 rounded-md backdrop-blur-sm place-content-center">
       <div className="border-b py-5 px-10">
-        <h1 className="font-bold text-3xl">Create event</h1>
+        <h1 className="font-bold text-3xl text-green-400">Create event</h1>
       </div>
       <div className="py-5 px-10">
         <Formik
@@ -154,7 +154,7 @@ export default function CreateEventForm() {
                 />
             </div>
 
-            <button type="submit" className="bg-emerald-300 rounded-md text-md p-2 mt-5" onClick={notice}>
+            <button type="submit" className="bg-gray-800 rounded-md text-md p-2 mt-5 text-green-400" onClick={notice}>
               Create Event
             </button>
           </Form>

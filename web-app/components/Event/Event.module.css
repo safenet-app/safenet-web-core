@@ -1,9 +1,9 @@
 .label {
-  @apply w-72;
+  @apply w-72 text-green-400;
 }
 
 .input {
-  @apply px-2 py-2 rounded-md border;
+  @apply px-2 py-2 rounded-md border text-green-300;
 }
 
 .inputGroup {
