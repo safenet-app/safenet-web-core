@@ -5,7 +5,7 @@ export default function create() {
   // const { walletConnected } = useEthereumContext() as EthereumContext;
   // console.log(walletConnected);
   return (
-    <div className="flex flex-col items-center max-w-screen-lg">
+    <div className="flex justify-center">
       <CreateEventForm />
     </div>
   );
