@@ -40,9 +40,9 @@ export default function CreateEventForm() {
   };
   return (
    
-   <div className="bg-black/40 rounded-md backdrop-blur-sm place-content-center">
+   <div className="bg-black/40 rounded-md backdrop-blur-sm place-content-center m-10">
       <div className="border-b py-5 px-10">
-        <h1 className="font-bold text-3xl text-green-400">Create event</h1>
+        <h1 className="flex justify-center font-bold text-3xl text-green-400">Create event</h1>
       </div>
       <div className="py-5 px-10">
         <Formik

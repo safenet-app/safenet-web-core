@@ -50,7 +50,7 @@ export const EventListComponent = () => {
                     <>
                       
                         <div className="flex justify-center" key={data.id}>
-                            <div className="block rounded-lg w-1/2 m-10 py-5  rounded-md backdrop-blur-sm text-center border-slate-100 border border-lime-700 background-color: rgb(101 163 13)">
+                            <div className="block rounded-lg w-1/2 m-10 py-5  rounded-md backdrop-blur-sm text-center border-slate-100 border-4 border-emerald-50 background-color: rgb(61, 85, 12)">
                                 <div className="py-3 px-6  ">
                                     <h5 className="text-green-400 text-xl font-medium mb-2">{data.shortDescription}</h5>
                                 </div>
@@ -65,20 +65,20 @@ export const EventListComponent = () => {
 
                                                     <tbody>
 
-                                                        <tr className="bg-gray-800 border border-lime-700">
+                                                        <tr className="bg-gray-800 border border-emerald-50">
                                                             <td className="px-5 py-4 whitespace-nowrap text-sm font-medium text-green-400">Date</td>
                                                             <td className="text-sm text-green-400 font-light px-6 py-4 whitespace-nowrap  ">
                                                                 {data.date}
                                                             </td>
                                                         </tr>
 
-                                                        <tr className="bg-gray-800 border border-lime-700">
+                                                        <tr className="bg-gray-800 border border-emerald-50">
                                                             <td className="px-5 py-4 whitespace-nowrap text-sm font-medium text-green-400">Time</td>
                                                             <td className="text-sm text-green-400 font-light px-6 py-4 whitespace-nowrap">
                                                                 {data.time}
                                                             </td>
                                                         </tr>
-                                                        <tr className="bg-gray-800 border border-lime-700">
+                                                        <tr className="bg-gray-800 border border-emerald-50">
                                                             <td className="px-5 py-4 whitespace-nowrap text-sm font-medium text-green-400">Location</td>
                                                             <td className="text-sm text-green-400 font-light px-6 py-4 whitespace-nowrap">
                                                                 {data.location}

@@ -56,9 +56,9 @@ export default function CreateDonationForm() {
 
   return (
 
-      <div className="self-center bg-black/40 rounded-md backdrop-blur-sm ">
+      <div className="self-center bg-black/40 rounded-md backdrop-blur-sm m-10">
           <div className="border-b py-5 px-10">
-              <h1 className="font-bold text-3xl text-green-400">Create donation</h1>
+              <h1 className="flex justify-center font-bold text-3xl text-green-400">Create donation</h1>
           </div>
           <div className="py-5 px-20">
               <Formik

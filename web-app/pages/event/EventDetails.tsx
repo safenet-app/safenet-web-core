@@ -12,9 +12,9 @@ export default function eventDetails(){
   
     return (
 
-      <div className="mx-auto max-w-md overflow-hidden rounded-lg bg-white shadow">
+      <div className="mx-auto border border-4 m-10 border-emerald-50 max-w-md overflow-hidden rounded-lg bg-white shadow">
   <img
-    src={router.query.files}
+    src={router.query.files} 
     className="aspect-video w-full object-cover"
     alt=""
   />
