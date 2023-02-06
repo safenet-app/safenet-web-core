@@ -11,7 +11,7 @@ export default function Header() {
       <header >
        
         <div >
-          <Web3Button />
+          <Web3Button icon="show" label="Connect Wallet" balance="show"/>
           
         </div>
       </header>
